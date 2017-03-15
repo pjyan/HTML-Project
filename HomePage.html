@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta charset=UTF-8>  
+<script language="javascript">
+var n = 0;
+var img=new Array("Montreal-night.jpg","montreal-canadiens.jpg","Notre-Dame.jpg" ,"old-montreal.jpg");
+function changeImg(n){
+ document.getElementById("image1").src=img[n];
+}
+setInterval("changeImg((++n)%4)",4000);
+
+function setImage(i){
+      n=i;
+      document.getElementById("image1").src=img[n];
+}
+</script>
+
+
+<style>
+ult.navigation{ background-color:  }
+ul.navi{
+	list-style-type:none; 
+	padding:0;
+	display: flex;
+	justify-content: center;
+}
+ul.navi li
+{
+display:inline;
+}
+ul.navi a:link,ul.navi a:visited
+{
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#4169E1;
+	text-align:center;
+    padding: 2px 30px; 
+	text-decoration:none;
+	text-transform:uppercase;
+}
+ul.navi a:hover,ul.navi a:active
+{
+    background-color:#0000CD;
+} 
+.navigationImage img{ 
+	width: 100%;
+	height: 800px;
+    position: absolute;  
+    top: 35px;    
+    left:auto; 
+    display: flex;
+    float:left;
+    z-index: -1;  
+    opacity: 0.7;  
+    transition: all linear 500ms;  
+    -o-transition: all linear 500ms;  
+    -moz-transition: all linear 500ms;  
+    -webkit-transition: all linear 500ms;  
+	}
+#slider {  
+ 	position: absolute;  
+    top: 815px;    
+ 	left:45%;
+	z-index: 1; 
+}  
+#slider button{  
+    text-decoration: none;  
+    background: #999999	;  
+    border: 1px solid #666666;  
+    padding: 4px 25px;   
+    margin:auto 1px; 
+    border-radius:25px;  
+}  
+#slider button:hover {  
+    background:#666666;  
+    border: 1px solid #999999; 
+} 
+div #text{ z-index: 2; }
+#text span.welcome{
+	text-align: center;
+	font-family:sans-serif;
+	color: white;
+	font-size: 80px;
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+<!--navigation text-->
+<div class = navigationText> 
+  <ul class = navi>
+  <li><a href="#home">Introduction</a></li>
+  <li><a href="#news">History</a></li>
+  <li><a href="#contact">Geography</a></li>
+  <li><a href="#about">Economy</a></li>
+  <li><a href="#about">Culture</a></li>
+  <li><a href="#about">Sport</a></li>
+  <li><a href="#about">Eduction</a></li>
+  <li><a href="#about">Attraction</a></li>
+  <li><a href="#about">About Author</a></li>
+</div>  
+<!--navigation image-->
+<div class=navigationImage> 
+    <img id="image1" src="Montreal-night.jpg" />    
+    <div id="text">    
+        <!--welcome-->
+        <span class=welcome>Welcome to Montréal</span>   
+    </div>
+    <div id="slider">  
+        <button onclick="setImage(0)"></button>
+        <button onclick="setImage(1)"></button>
+        <button onclick="setImage(2)"></button>
+        <button onclick="setImage(3)"></button>
+    </div>
+</div>
+</body>
+</html>
