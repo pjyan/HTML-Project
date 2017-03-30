@@ -2,10 +2,10 @@
 <head>
 <meta charset=UTF-8>  
 <script language="javascript">
-var n = 0;
-var img=new Array("Montreal-night.jpg","montreal-canadiens.jpg","Notre-Dame.jpg" ,"old-montreal.jpg");
-function changeImg(n){
- document.getElementById("image1").src=img[n];
+ var n = 0;
+ var img=new Array("Montreal-night.jpg","montreal-canadiens.jpg","Notre-Dame.jpg" ,"old-montreal.jpg");
+ function changeImg(n){
+  document.getElementById("image1").src=img[n];
 }
 setInterval("changeImg((++n)%4)",4000);
 
@@ -42,6 +42,7 @@ ul.navi a:hover,ul.navi a:active
 {
     background-color:#0000CD;
 } 
+div.navigationText ul.navi li a.active{ background-color:#0000CD; }
 .navigationImage img{ 
 	width: 100%;
 	height: 800px;
@@ -86,13 +87,15 @@ div.welcome{
 	font-size: 80px;
 	opacity: 1;
 }
+
 </style>
 </head>
 <body>
 <!--navigation text-->
 <div class = navigationText> 
   <ul class = navi>
-  <li><a href="#home">Introduction</a></li>
+  <li><a class="active" href="HomePage.html">Home</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
   <li><a href="#news">History</a></li>
   <li><a href="#contact">Geography</a></li>
   <li><a href="#about">Economy</a></li>
